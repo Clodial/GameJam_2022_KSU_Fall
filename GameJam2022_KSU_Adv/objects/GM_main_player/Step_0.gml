@@ -1,6 +1,10 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Main Player Actions
 
+/***
+* 
+* Main Movement controls
+*
+***/
 if(keyboard_check(global.up)){
     if(!place_meeting(x, y - global.move, main_wall)){
         y -= global.move;
@@ -50,10 +54,12 @@ if(keyboard_check_released(global.down)){
 if(keyboard_check_released(global.left)){
 	leftRelease = stopRate
 	leftDragCur = 1
+	image_xscale = -1;
 }
 if(keyboard_check_released(global.right)){
 	rightRelease = stopRate
 	rightDragCur = 1
+	image_xscale = 1;
 }
 
 if(upRelease > 0){
