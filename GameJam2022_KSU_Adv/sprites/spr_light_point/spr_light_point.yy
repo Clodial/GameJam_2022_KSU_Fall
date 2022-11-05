@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Lighting",
-    "path": "folders/Sprites/Lighting.yy",
+    "path": "folders/Sprites/lighting_library/Lighting.yy",
   },
 }

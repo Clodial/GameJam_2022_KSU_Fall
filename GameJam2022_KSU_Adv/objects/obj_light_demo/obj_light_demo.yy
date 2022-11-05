@@ -37,6 +37,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Demo",
-    "path": "folders/Objects/Demo.yy",
+    "path": "folders/Objects/lighting_library/Demo.yy",
   },
 }
