@@ -4,11 +4,11 @@ function distanceCheck(xx, yy, chMove, chDir, wall, size){
 
 	if(chDir == global.right || chDir == 0){
 	    var inst_obj = instance_place(xx+chMove, yy, wall);
-	    x += (inst_obj.x-xx-size); 
+	    x += (inst_obj.x-xx-(size)); 
 	}
 	if(chDir == global.left || chDir == 1){
 	    var inst_obj = instance_place(xx-chMove, yy, wall);
-	    x -= (xx - inst_obj.x - size); 
+	    x -= (xx - inst_obj.x - (size)); 
 	}
 	if(chDir == global.up || chDir == 2){
 	    var inst_obj = instance_place(xx, yy-chMove, wall);
