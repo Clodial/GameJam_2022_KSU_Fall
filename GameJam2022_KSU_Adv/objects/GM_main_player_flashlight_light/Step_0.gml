@@ -11,6 +11,3 @@ light[| eLight.Direction] = point_direction(x, y, mouse_x, mouse_y);
 light[| eLight.Range] = 200;
 light[| eLight.Intensity] = 1;
 light[| eLight.Flags] |= eLightFlags.Dirty; 
-
-show_debug_message("Light X:" + string(light[| eLight.X]));
-show_debug_message("Light Y:" + string(light[|eLight.Y])); 

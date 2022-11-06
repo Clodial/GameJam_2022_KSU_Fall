@@ -2,28 +2,35 @@
 // You can write your code in this editor
 
 //make the x and y follow the point between the mouse and the player
+playerX = GM_main_player.x + GM_main_player.sprite_width/2;
+playerY = GM_main_player.y + GM_main_player.sprite_height/2;
  
  if(followPlayer){
 	sprite_index = cr_none
-	x += (GM_main_player.x - x) * .05;
-	y += (GM_main_player.y - y) * .05;
+	x += (playerX - x) * .05;
+	y += (playerY - y) * .05;
  }else{
-	if(abs((mouse_x - GM_main_player.x)/4) < 900){
-		x +=  (((mouse_x - GM_main_player.x)/2 + GM_main_player.x) - x) * .1;
+	if(abs((mouse_x - playerX)/4) < rateOfMouseTravel){
+		x +=  (((mouse_x - playerX)/2 + playerX) - x) * rateOfMouseFollow;
 	}else{
-		if((mouse_x - GM_main_player.x)/4 < 0){
-			x +=  ((-900 + GM_main_player.x) - x) * .01;
+		if((mouse_x - playerX)/4 < 0){
+			x +=  ((-rateOfMouseTravel + playerX) - x) * rateOfMouseFollow;
 		}else{
-			x +=  ((900 + GM_main_player.x) - x) * .01;
+			x +=  ((rateOfMouseTravel + playerX) - x) * rateOfMouseFollow;
 		}
 	}
-	if(abs((mouse_y - GM_main_player.y)/4) < 900){
-		y += (((mouse_y - GM_main_player.y)/4 + GM_main_player.y) - y) * .1;
+	if(abs((mouse_y - playerY)/4) < rateOfMouseTravel){
+		y += (((mouse_y - playerY)/4 + playerY) - y) * rateOfMouseFollow;
 	}else{
-		if((mouse_y - GM_main_player.y)/2 < 0){
-			y += ((-900 + GM_main_player.y) - y) * .01;
+		if((mouse_y - playerY)/2 < 0){
+			y += ((-rateOfMouseTravel + playerY) - y) * rateOfMouseFollow;
 		}else{
-			y += ((900 + GM_main_player.y) - y) * .01;
+			y += ((rateOfMouseTravel + playerY) - y) * rateOfMouseFollow;
 		}
 	}
  }	
+ if(mouse_check_button(mb_left)){
+	followPlayer = false;
+ } else { followPlayer = true; }
+ show_debug_message("camera position x: " + string(x));
+ show_debug_message("camera position y: " + string(y));

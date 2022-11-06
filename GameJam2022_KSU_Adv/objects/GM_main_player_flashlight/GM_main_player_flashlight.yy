@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "GM_main_player_flashlight",
   "spriteId": {
-    "name": "test_flashlight",
-    "path": "sprites/test_flashlight/test_flashlight.yy",
+    "name": "main_candle",
+    "path": "sprites/main_candle/main_candle.yy",
   },
   "solid": false,
   "visible": true,

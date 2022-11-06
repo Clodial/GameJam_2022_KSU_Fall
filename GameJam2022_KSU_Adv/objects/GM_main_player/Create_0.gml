@@ -4,7 +4,7 @@
 // This is a static shadow caster (it never changes its polygon)
 //flags |= eShadowCasterFlags.Static;
 
-instance_create_layer(x + (sprite_width), y + (sprite_height/2), "player_layer", GM_main_player_flashlight);
+instance_create_layer(x + (sprite_width), y + (sprite_height/2), "lighting_layer", GM_main_player_flashlight);
 
 upRelease = 0;
 downRelease = 0;
@@ -19,7 +19,13 @@ rightDragCur = 1;
 
 image_speed = 0;
 
-addStepCounter = 5;
-addStepCounterMax = 5;
+addStepCounter = 60;
+addStepCounterMax = 60;
 
 dbStepAdd = 2;
+dbObstacleHitAdd = 2;
+
+stopStepCounter = 60;
+stopStepCounterMax = 60;
+
+isMoving = false;

@@ -11,6 +11,12 @@ if(keyboard_check(global.up)){
         y -= global.move;
     }else{
         distanceCheck(x, y, global.move, global.up, main_wall, sprite_height); 
+		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
+			global.dbLevel = global.dbLevelMax;
+		}else{
+			global.dbLevel += dbObstacleHitAdd;
+		}
+		checkIfWallHit();
     }
 	upRelease = 0;
 	image_speed = .5;
@@ -19,7 +25,13 @@ if(keyboard_check(global.down)){
     if(!place_meeting(x, y+global.move, main_wall)){
         y += global.move; 
     }else{
-        distanceCheck(x, y, global.move, global.down, main_wall, sprite_height); 
+        distanceCheck(x, y, global.move, global.down, main_wall, sprite_height);
+		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
+			global.dbLevel = global.dbLevelMax;
+		}else{
+			global.dbLevel += dbObstacleHitAdd;
+		}
+		checkIfWallHit();
     }
 	downRelease = 0;
 	image_speed = .5;
@@ -28,7 +40,13 @@ if(keyboard_check(global.left)){
     if(!place_meeting(x-global.move, y, main_wall)){
         x -= global.move;
     }else{
-        distanceCheck(x, y, global.move, global.left, main_wall, sprite_width); 
+        distanceCheck(x, y, global.move, global.left, main_wall, sprite_width);
+		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
+			global.dbLevel = global.dbLevelMax;
+		}else{
+			global.dbLevel += dbObstacleHitAdd;
+		}
+		checkIfWallHit();
     }
 	leftRelease = 0;
 	image_speed = .5;
@@ -38,7 +56,13 @@ if(keyboard_check(global.right)){
     if(!place_meeting(x+global.move, y, main_wall)){
         x += global.move;
     }else{
-        distanceCheck(x, y, global.move, global.right, main_wall, sprite_width); 
+        distanceCheck(x, y, global.move, global.right, main_wall, sprite_width);
+		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
+			global.dbLevel = global.dbLevelMax;
+		}else{
+			global.dbLevel += dbObstacleHitAdd;
+		}
+		checkIfWallHit();
     }
 	rightRelease = 0;
 	image_speed = .5;
@@ -102,4 +126,47 @@ if(rightRelease > 0){
 	rightRelease -= 1
 	image_index = 0
 	image_speed = 0
+}
+
+if(keyboard_check(global.right) 
+	|| keyboard_check(global.left) 
+	|| keyboard_check(global.up) 
+	|| keyboard_check(global.down)){
+	isMoving = true;
+} else {
+	isMoving = false;
+	addStepCounter = addStepCounterMax;
+}
+
+if(isMoving){
+	addStepCounter--;
+	if(addStepCounter <= 0) {
+		if(global.dbLevel + dbStepAdd >= global.dbLevelMax){
+			global.dbLevel = global.dbLevelMax;
+		}else{
+			global.dbLevel += dbStepAdd;
+		}
+		addStepCounter = addStepCounterMax;
+	}
+	if(!audio_is_playing(footsteps)){
+		audio_play_sound(footsteps, 3, true, .03, 0, 1);
+	}
+} else {
+	stopStepCounter--;
+	if(stopStepCounter <= 0
+		&& !(global.dbLevel >= global.dbLevelMax)){
+		if(global.dbLevel >= dbStepAdd){
+			global.dbLevel -= dbStepAdd;
+		} else {
+			global.dbLevel = 0;
+		}
+		stopStepCounter = stopStepCounterMax;
+	}
+	audio_stop_sound(footsteps);
+}
+
+function checkIfWallHit(){
+	if(!audio_is_playing(wall_bump)){
+		audio_play_sound(wall_bump, 2, false, .01, 0, 1);
+	}
 }
