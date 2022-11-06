@@ -146,3 +146,8 @@ switch (curState) {
 	default:
 		break;
 }
+
+if(abs(GM_main_player.x - GM_main_mom.x) < GM_main_player.sprite_width 
+	&& abs(GM_main_player.y - GM_main_mom.y) < GM_main_player.sprite_height){
+	game_end();	
+}

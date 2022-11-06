@@ -14,4 +14,5 @@ volume_rate_close = .6;
 image_speed = 0;
 
 mom_timer_audio_max = 10;
+
 alarm[0] = room_speed * mom_timer_audio_max;

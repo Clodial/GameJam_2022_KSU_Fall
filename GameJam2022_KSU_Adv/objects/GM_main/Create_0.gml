@@ -18,4 +18,4 @@ global.down = ord("S");
 global.left = ord("A");
 global.right = ord("D"); 
 
-alarm[0] = room_speed; // remove a second from the timer
+alarm[1] = room_speed; // remove a second from the timer

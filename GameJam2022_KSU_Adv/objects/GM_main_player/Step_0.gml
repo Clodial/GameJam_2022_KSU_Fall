@@ -10,7 +10,7 @@ if(keyboard_check(global.up)){
     if(!place_meeting(x, y - global.move, main_wall)){
         y -= global.move;
     }else{
-        distanceCheck(x, y, global.move, global.up, main_wall, sprite_height); 
+        distanceCheck(x, y, global.move, global.up, main_wall, sprite_height/2); 
 		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
 			global.dbLevel = global.dbLevelMax;
 		}else{
