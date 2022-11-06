@@ -138,6 +138,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Lighting",
-    "path": "folders/Objects/lighting_library/Lighting.yy",
+    "path": "folders/Objects/_lighting_library/Lighting.yy",
   },
 }

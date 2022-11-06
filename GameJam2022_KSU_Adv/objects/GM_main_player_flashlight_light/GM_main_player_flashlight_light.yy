@@ -12,8 +12,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_light_demo",
-    "path": "objects/obj_light_demo/obj_light_demo.yy",
+    "name": "obj_light",
+    "path": "objects/obj_light/obj_light.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

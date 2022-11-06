@@ -36,6 +36,6 @@
   ],
   "parent": {
     "name": "Demo",
-    "path": "folders/Objects/lighting_library/Demo.yy",
+    "path": "folders/Objects/_lighting_library/Demo.yy",
   },
 }
