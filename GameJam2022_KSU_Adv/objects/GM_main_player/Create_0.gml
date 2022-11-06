@@ -25,7 +25,7 @@ addStepCounterMax = 60;
 dbStepAdd = 2;
 dbObstacleHitAdd = 2;
 
-stopStepCounter = 60;
-stopStepCounterMax = 60;
+stopStepCounter = 10;
+stopStepCounterMax = 10;
 
 isMoving = false;

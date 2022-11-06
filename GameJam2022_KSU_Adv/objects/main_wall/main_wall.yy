@@ -7,7 +7,7 @@
     "path": "sprites/test_wall/test_wall.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

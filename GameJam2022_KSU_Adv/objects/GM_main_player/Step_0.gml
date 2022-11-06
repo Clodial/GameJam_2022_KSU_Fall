@@ -10,7 +10,7 @@ if(keyboard_check(global.up)){
     if(!place_meeting(x, y - global.move, main_wall)){
         y -= global.move;
     }else{
-        distanceCheck(x, y, global.move, global.up, main_wall, sprite_height/2); 
+        distanceCheck(x, y, global.move, global.up, main_wall, sprite_height); 
 		if(global.dbLevel + dbObstacleHitAdd >= global.dbLevelMax){
 			global.dbLevel = global.dbLevelMax;
 		}else{
@@ -19,7 +19,8 @@ if(keyboard_check(global.up)){
 		checkIfWallHit();
     }
 	upRelease = 0;
-	image_speed = .5;
+	sprite_index = lil_dude_up;
+	image_speed = 4/room_speed;
 }
 if(keyboard_check(global.down)){
     if(!place_meeting(x, y+global.move, main_wall)){
@@ -34,7 +35,8 @@ if(keyboard_check(global.down)){
 		checkIfWallHit();
     }
 	downRelease = 0;
-	image_speed = .5;
+	sprite_index = lil_dude_down;
+	image_speed = 4/room_speed;
 }
 if(keyboard_check(global.left)){
     if(!place_meeting(x-global.move, y, main_wall)){
@@ -49,8 +51,8 @@ if(keyboard_check(global.left)){
 		checkIfWallHit();
     }
 	leftRelease = 0;
-	image_speed = .5;
-	sprite_index = test_player_left;
+	sprite_index = lil_dude_left;
+	image_speed = 4/room_speed;
 }
 if(keyboard_check(global.right)){
     if(!place_meeting(x+global.move, y, main_wall)){
@@ -65,8 +67,8 @@ if(keyboard_check(global.right)){
 		checkIfWallHit();
     }
 	rightRelease = 0;
-	image_speed = .5;
-	sprite_index = test_player_right;
+	sprite_index = lil_dude_right;
+	image_speed = 4/room_speed;
 }
 
 

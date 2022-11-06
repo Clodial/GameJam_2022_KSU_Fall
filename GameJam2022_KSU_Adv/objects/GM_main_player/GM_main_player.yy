@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "GM_main_player",
   "spriteId": {
-    "name": "test_player_right",
-    "path": "sprites/test_player_right/test_player_right.yy",
+    "name": "lil_dude_down",
+    "path": "sprites/lil_dude_down/lil_dude_down.yy",
   },
   "solid": false,
   "visible": true,

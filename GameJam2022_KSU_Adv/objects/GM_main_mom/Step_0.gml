@@ -20,6 +20,7 @@ switch (curState) {
 					curState = enemyState.pause
 				}
 			}
+			sprite_index = mom_left;
 			image_speed = en_walk_speed
 		}
 		if(moveState == 2){
@@ -34,6 +35,7 @@ switch (curState) {
 					curState = enemyState.pause
 				}
 			}
+			sprite_index = mom_right;
 			image_speed = en_walk_speed
 		}
 		if(moveState == 3){
@@ -50,6 +52,7 @@ switch (curState) {
 					}
 				}
 			}
+			sprite_index = mom_up;
 			image_speed = en_walk_speed
 		}
 		if(moveState == 4){
@@ -64,6 +67,7 @@ switch (curState) {
 					curState = enemyState.pause
 				}
 			}
+			sprite_index = mom_down;
 			image_speed = en_walk_speed
 		}
 		stateTimer -= 1
@@ -111,6 +115,7 @@ switch (curState) {
 					}else if(place_meeting(x + enSpeed, y, main_wall)){
 						distanceCheck(x, y, enSpeed, 0, main_wall, sprite_width);
 					}
+					sprite_index = mom_right;
 				}
 				if((GM_main_player.x - x) < 0){
 					//move left
@@ -119,6 +124,7 @@ switch (curState) {
 					}else if(place_meeting(x - enSpeed, y, main_wall)){
 						distanceCheck(x, y, enSpeed, 1, main_wall, sprite_width);
 					}
+					sprite_index = mom_left;
 				}
 				if((GM_main_player.y - y) > 0){
 					//move down
@@ -127,6 +133,7 @@ switch (curState) {
 					}else if(place_meeting(x, y + enSpeed, main_wall)){
 						distanceCheck(x, y, enSpeed, 3, main_wall, sprite_height);
 					}
+					sprite_index = mom_down;
 				}
 				if((GM_main_player.y - y) < 0){
 					//move up
@@ -135,6 +142,7 @@ switch (curState) {
 					}else if(place_meeting(x, y - enSpeed, main_wall)){
 						distanceCheck(x, y, enSpeed, 2, main_wall, sprite_height);
 					}
+					sprite_index = mom_up;
 				}
 				image_speed = en_walk_speed
 			}else{
@@ -149,5 +157,5 @@ switch (curState) {
 
 if(abs(GM_main_player.x - GM_main_mom.x) < GM_main_player.sprite_width 
 	&& abs(GM_main_player.y - GM_main_mom.y) < GM_main_player.sprite_height){
-	game_end();	
+	game_end();
 }

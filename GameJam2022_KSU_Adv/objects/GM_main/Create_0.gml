@@ -18,4 +18,6 @@ global.down = ord("S");
 global.left = ord("A");
 global.right = ord("D"); 
 
+global.cookies = 10;
+
 alarm[1] = room_speed; // remove a second from the timer

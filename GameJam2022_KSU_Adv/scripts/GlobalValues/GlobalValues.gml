@@ -8,5 +8,11 @@ function GlobalValues(){
 		attack,
 		chase
 	}
+	
+	enum trap_to_spawn{
+		itm_alarm = 1,
+		itm_bin = 2,
+		itm_book = 3
+	}
 
 }
