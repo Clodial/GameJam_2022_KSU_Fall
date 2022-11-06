@@ -4,6 +4,10 @@
 persistent = true;
 x = 0;
 y = 0
+
+global.dbLevel = 0;
+global.dbLevelMax = 20;
+
 global.move = 4;
 global.up = ord("W");
 global.down = ord("S");

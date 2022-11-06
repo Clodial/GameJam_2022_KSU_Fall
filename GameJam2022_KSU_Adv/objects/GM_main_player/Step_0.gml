@@ -1,11 +1,5 @@
 /// @description Main Player Actions
 
-/**
-*
-*	Lighting features
-*
-**/
-polygon = polygon_from_instance(id);
 
 /***
 * 

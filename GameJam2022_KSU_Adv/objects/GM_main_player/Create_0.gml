@@ -1,12 +1,6 @@
 /// @description Player Initiation
 // You can write your code in this editor
 
-// Inherit the parent event
-event_inherited();
-
-// Create a sprite polygon for this instance
-polygon = polygon_from_instance(id);
-
 // This is a static shadow caster (it never changes its polygon)
 //flags |= eShadowCasterFlags.Static;
 
@@ -24,3 +18,8 @@ leftDragCur = 1;
 rightDragCur = 1;
 
 image_speed = 0;
+
+addStepCounter = 5;
+addStepCounterMax = 5;
+
+dbStepAdd = 2;
